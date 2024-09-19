@@ -1,9 +1,9 @@
 import { Inject, Injectable, LoggerService } from '@nestjs/common';
 import { pino, LoggerOptions } from 'pino';
 import { AsyncLocalStorage } from 'async_hooks';
-import { ASYNC_STORAGE } from '@server/global/constants';
+import { ASYNC_STORAGE } from 'src/global/constants';
 import { ConfigService } from '@nestjs/config';
-import { AppEnv } from '@server/services/app-config/configuration';
+import { AppEnv } from 'src/services/app-config/configuration';
 
 @Injectable()
 export class AppLoggerService implements LoggerService {
@@ -12,7 +12,7 @@ export class AppLoggerService implements LoggerService {
   constructor(
     @Inject(ASYNC_STORAGE)
     private readonly asyncStorage: AsyncLocalStorage<Map<string, string>>,
-    private readonly configService: ConfigService,
+    private readonly configService: ConfigService
   ) {
     const logLevel = configService.get('logLevel');
     const appEnv = configService.get<AppEnv>('appEnv');

@@ -7,7 +7,7 @@ import { AsyncLocalStorage } from 'async_hooks';
 export class AsyncStorageMiddleware implements NestMiddleware {
   constructor(
     @Inject(ASYNC_STORAGE)
-    private readonly asyncStorage: AsyncLocalStorage<Map<string, string>>,
+    private readonly asyncStorage: AsyncLocalStorage<Map<string, string>>
   ) {}
 
   use(req: any, res: any, next: () => void) {

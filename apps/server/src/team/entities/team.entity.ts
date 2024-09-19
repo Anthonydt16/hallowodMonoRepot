@@ -13,29 +13,29 @@ import { TeamUserEntity } from '../../team_user/entities/team_user.entity';
 @Entity('team')
 export class TeamEntity extends BaseModel {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  name: string;
+  name!: string;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  createdAt: Date;
+  createdAt!: Date;
 
   @Column({ type: 'timestamp', nullable: true })
-  deletedAt: Date;
+  deletedAt!: Date;
 
   @Column('uuid')
-  contestId: string;
+  contestId!: string;
 
   @ManyToOne(() => ContestEntity, (contest) => contest.teams)
-  contest: ContestEntity;
+  contest!: ContestEntity;
 
   @Column('uuid')
-  categoryId: string;
+  categoryId!: string;
 
   @ManyToOne(() => CategoryEntity, (category) => category.teams)
-  category: CategoryEntity;
+  category!: CategoryEntity;
 
   @OneToMany(() => TeamUserEntity, (teamUser) => teamUser.team)
-  users: TeamUserEntity[];
+  users!: TeamUserEntity[];
 }

@@ -3,8 +3,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ContestService } from './contest.service';
 import { ContestController } from './contest.controller';
 import { ContestEntity } from './entities/contest.entity';
-import { WorkoutEntity } from '@server/workout/entities/workout.entity';
-import { CategoryEntity } from '@server/category/entities/category.entity';
+import { WorkoutEntity } from 'src/workout/entities/workout.entity';
+import { CategoryEntity } from 'src/category/entities/category.entity';
 @Module({
   imports: [
     TypeOrmModule.forFeature([ContestEntity, WorkoutEntity, CategoryEntity]),

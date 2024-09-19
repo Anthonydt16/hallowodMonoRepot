@@ -56,7 +56,7 @@ export class Users1636917857168 implements MigrationInterface {
             enum: [RoleEnum.ADMIN, RoleEnum.USER, RoleEnum.Owner],
           },
         ],
-      }),
+      })
     );
 
     await queryRunner.createTable(
@@ -102,7 +102,7 @@ export class Users1636917857168 implements MigrationInterface {
             type: 'varchar',
           },
         ],
-      }),
+      })
     );
 
     await queryRunner.createTable(
@@ -140,7 +140,7 @@ export class Users1636917857168 implements MigrationInterface {
             type: 'uuid',
           },
         ],
-      }),
+      })
     );
     await queryRunner.createTable(
       new Table({
@@ -192,7 +192,7 @@ export class Users1636917857168 implements MigrationInterface {
             type: 'varchar',
           },
         ],
-      }),
+      })
     );
 
     await queryRunner.createTable(
@@ -247,7 +247,7 @@ export class Users1636917857168 implements MigrationInterface {
             type: 'uuid',
           },
         ],
-      }),
+      })
     );
 
     await queryRunner.createTable(
@@ -289,7 +289,7 @@ export class Users1636917857168 implements MigrationInterface {
             type: 'uuid',
           },
         ],
-      }),
+      })
     );
     await queryRunner.createTable(
       new Table({
@@ -326,7 +326,7 @@ export class Users1636917857168 implements MigrationInterface {
             type: 'uuid',
           },
         ],
-      }),
+      })
     );
     await queryRunner.createTable(
       new Table({
@@ -359,7 +359,7 @@ export class Users1636917857168 implements MigrationInterface {
             isNullable: true,
           },
         ],
-      }),
+      })
     );
     //écrit les clés étrangères de team_user
     await queryRunner.createForeignKey(
@@ -369,7 +369,7 @@ export class Users1636917857168 implements MigrationInterface {
         referencedColumnNames: ['id'],
         referencedTableName: 'users',
         onDelete: 'CASCADE',
-      }),
+      })
     );
     await queryRunner.createForeignKey(
       'team_user',
@@ -378,7 +378,7 @@ export class Users1636917857168 implements MigrationInterface {
         referencedColumnNames: ['id'],
         referencedTableName: 'team',
         onDelete: 'CASCADE',
-      }),
+      })
     );
     //écrit les clés étrangères de team
     await queryRunner.createForeignKey(
@@ -388,7 +388,7 @@ export class Users1636917857168 implements MigrationInterface {
         referencedColumnNames: ['id'],
         referencedTableName: 'contest',
         onDelete: 'CASCADE',
-      }),
+      })
     );
     await queryRunner.createForeignKey(
       'team',
@@ -397,7 +397,7 @@ export class Users1636917857168 implements MigrationInterface {
         referencedColumnNames: ['id'],
         referencedTableName: 'category',
         onDelete: 'CASCADE',
-      }),
+      })
     );
     //écrit les clés étrangères de exercise
     await queryRunner.createForeignKey(
@@ -407,7 +407,7 @@ export class Users1636917857168 implements MigrationInterface {
         referencedColumnNames: ['id'],
         referencedTableName: 'part_workout',
         onDelete: 'CASCADE',
-      }),
+      })
     );
     await queryRunner.createForeignKey(
       'exercise',
@@ -416,7 +416,7 @@ export class Users1636917857168 implements MigrationInterface {
         referencedColumnNames: ['id'],
         referencedTableName: 'category',
         onDelete: 'CASCADE',
-      }),
+      })
     );
     //écrit les clés étrangères de category
     await queryRunner.createForeignKey(
@@ -426,7 +426,7 @@ export class Users1636917857168 implements MigrationInterface {
         referencedColumnNames: ['id'],
         referencedTableName: 'contest',
         onDelete: 'CASCADE',
-      }),
+      })
     );
     //écrit les clés étrangères de part_workout
     await queryRunner.createForeignKey(
@@ -436,7 +436,7 @@ export class Users1636917857168 implements MigrationInterface {
         referencedColumnNames: ['id'],
         referencedTableName: 'workout',
         onDelete: 'CASCADE',
-      }),
+      })
     );
     //écrit les clés étrangères de workout
     await queryRunner.createForeignKey(
@@ -446,7 +446,7 @@ export class Users1636917857168 implements MigrationInterface {
         referencedColumnNames: ['id'],
         referencedTableName: 'contest',
         onDelete: 'CASCADE',
-      }),
+      })
     );
   }
 

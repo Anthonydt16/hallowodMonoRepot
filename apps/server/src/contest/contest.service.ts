@@ -9,7 +9,7 @@ import { ContestEntity } from './entities/contest.entity';
 export class ContestService {
   constructor(
     @InjectRepository(ContestEntity)
-    private contestRepository: Repository<ContestEntity>,
+    private contestRepository: Repository<ContestEntity>
   ) {}
 
   async create(createContestDto: CreateContestDto): Promise<ContestEntity> {
@@ -27,7 +27,7 @@ export class ContestService {
 
   async update(
     id: string,
-    updateContestDto: UpdateContestDto,
+    updateContestDto: UpdateContestDto
   ): Promise<ContestEntity | null> {
     await this.contestRepository.update(id, updateContestDto);
     return this.contestRepository.findOneBy({ id });

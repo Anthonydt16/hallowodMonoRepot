@@ -9,17 +9,17 @@ import { RoleEnum } from '../entities/user.entity';
 
 export class CreateUserDto {
   @IsString()
-  firstName: string;
+  firstName!: string;
 
   @IsString()
-  lastName: string;
+  lastName!: string;
 
   @IsEmail()
-  email: string;
+  email!: string;
 
   @IsString()
   @IsNotEmpty()
-  password: string;
+  password!: string;
   @IsOptional()
   @IsEnum(RoleEnum)
   role?: RoleEnum;

@@ -36,7 +36,7 @@ export class CacheHealthIndicator extends HealthIndicator {
     } catch {
       throw new HealthCheckError(
         'CacheHealthIndicator failed',
-        this.getStatus('cache', false),
+        this.getStatus('cache', false)
       );
     }
   }

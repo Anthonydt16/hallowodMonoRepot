@@ -7,32 +7,32 @@ import { Entity, Column, OneToMany, ManyToOne } from 'typeorm';
 @Entity('category')
 export class CategoryEntity extends BaseModel {
   @Column()
-  name: string;
+  name!: string;
 
   @Column('text')
-  description: string;
+  description!: string;
 
   @Column('int')
-  ageMin: number;
+  ageMin!: number;
 
   @Column('int')
-  ageMax: number;
+  ageMax!: number;
 
   @Column('int')
-  nbTeamMax: number;
+  nbTeamMax!: number;
 
   @Column('int')
-  nbPersonMaxByTeam: number;
+  nbPersonMaxByTeam!: number;
 
   @Column('uuid')
-  contestId: string;
+  contestId!: string;
 
   @ManyToOne(() => ContestEntity, (contest) => contest.categorys)
-  contest: ContestEntity;
+  contest!: ContestEntity;
 
   @OneToMany(() => ExerciseEntity, (exercise) => exercise.category)
-  exercises: ExerciseEntity[];
+  exercises!: ExerciseEntity[];
 
   @OneToMany(() => TeamEntity, (team) => team.category)
-  teams: TeamEntity[];
+  teams!: TeamEntity[];
 }

@@ -2,11 +2,11 @@ import { Module, forwardRef } from '@nestjs/common';
 import { PartWorkoutService } from './part_workout.service';
 import { PartWorkoutController } from './part_workout.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { WorkoutEntity } from '@server/workout/entities/workout.entity';
+import { WorkoutEntity } from 'src/workout/entities/workout.entity';
 import { PartWorkoutEntity } from './entities/part_workout.entity';
-import { ExerciseEntity } from '@server/exercise/entities/exercise.entity';
-import { WorkoutModule } from '@server/workout/workout.module';
-import { ExerciseModule } from '@server/exercise/exercise.module';
+import { ExerciseEntity } from 'src/exercise/entities/exercise.entity';
+import { WorkoutModule } from 'src/workout/workout.module';
+import { ExerciseModule } from 'src/exercise/exercise.module';
 
 @Module({
   imports: [

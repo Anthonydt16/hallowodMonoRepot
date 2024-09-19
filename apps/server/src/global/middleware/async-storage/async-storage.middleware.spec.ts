@@ -43,13 +43,13 @@ describe('AsyncStorageMiddleware', () => {
         headers: { 'x-request-id': 'mocked' },
       },
       null,
-      nextMock,
+      nextMock
     );
 
     expect(nextMock).toHaveBeenCalledTimes(1);
     expect(runSpy).toHaveBeenCalledWith(
       new Map().set('traceId', 'mocked'),
-      expect.anything(),
+      expect.anything()
     );
   });
 
@@ -62,13 +62,13 @@ describe('AsyncStorageMiddleware', () => {
         headers: {},
       },
       null,
-      nextMock,
+      nextMock
     );
 
     expect(nextMock).toHaveBeenCalledTimes(1);
     expect(runSpy).toHaveBeenCalledWith(
       new Map().set('traceId', 'mock-trace-id'),
-      expect.anything(),
+      expect.anything()
     );
   });
 });

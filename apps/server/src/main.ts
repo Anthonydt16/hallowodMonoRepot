@@ -31,7 +31,7 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true,
       transform: true,
-    }),
+    })
   );
 
   const logger = app.get(AppLoggerService);
@@ -44,7 +44,7 @@ async function bootstrap() {
       `<a
          target="_blank"
          href="https://github.com/rodion-arr/nestjs-starter-kit"
-       >https://github.com/rodion-arr/nestjs-starter-kit</a>`,
+       >https://github.com/rodion-arr/nestjs-starter-kit</a>`
     )
     .addBearerAuth()
     .build();

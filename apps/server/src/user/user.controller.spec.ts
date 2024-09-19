@@ -60,7 +60,7 @@ describe('UserController', () => {
           lastName: 'lastName',
           email: 'email',
           password: 'p',
-        }),
+        })
       ).toStrictEqual({
         message: 'User created',
         user: {
@@ -79,7 +79,7 @@ describe('UserController', () => {
         await controller.login({
           email: 'email',
           password: 'p',
-        }),
+        })
       ).toStrictEqual({
         message: 'Login successful',
         token: 'mock-token',

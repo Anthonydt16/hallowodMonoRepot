@@ -20,7 +20,7 @@ describe('RequestLoggerInterceptor', () => {
       .compile();
 
     interceptor = module.get<RequestLoggerInterceptor>(
-      RequestLoggerInterceptor,
+      RequestLoggerInterceptor
     );
   });
 
@@ -49,7 +49,7 @@ describe('RequestLoggerInterceptor', () => {
     expect(nextMock.handle).toHaveBeenCalledTimes(1);
     expect(loggerMock.log).toHaveBeenCalledWith(
       '{"message":"test-method test-url REQUEST","query":"test-query","body":"test-body"}',
-      'RequestLoggerInterceptor',
+      'RequestLoggerInterceptor'
     );
   });
 });

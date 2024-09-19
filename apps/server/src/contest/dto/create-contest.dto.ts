@@ -1,13 +1,13 @@
 import { IsString } from 'class-validator';
 export class CreateContestDto {
   @IsString()
-  name: string;
+  name!: string;
   @IsString()
-  description: string;
+  description!: string;
   @IsString()
-  city: string;
+  city!: string;
   @IsString()
-  date: Date;
+  date!: Date;
   @IsString()
-  gps_coordinates: string;
+  gps_coordinates!: string;
 }

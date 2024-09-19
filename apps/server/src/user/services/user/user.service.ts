@@ -12,7 +12,7 @@ export class UserService {
     @InjectRepository(UserEntity)
     private usersRepository: Repository<UserEntity>,
     private readonly passwordService: PasswordService,
-    private readonly jwtService: JwtService,
+    private readonly jwtService: JwtService
   ) {}
 
   async isUserExists(email: string): Promise<UserEntity | null> {
@@ -45,7 +45,7 @@ export class UserService {
 
   async checkUserPassword(
     user: UserEntity,
-    requestPassword: string,
+    requestPassword: string
   ): Promise<boolean> {
     return this.passwordService.compare(requestPassword, user.passwordHash);
   }
@@ -61,7 +61,7 @@ export class UserService {
 
   public getAll(): Promise<UserEntity[]> {
     return this.usersRepository.find({
-      select: ['id', 'email', 'lastName', 'firstName','role'],
+      select: ['id', 'email', 'lastName', 'firstName', 'role'],
     });
   }
 }

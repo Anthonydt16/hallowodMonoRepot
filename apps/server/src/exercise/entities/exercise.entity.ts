@@ -6,29 +6,29 @@ import { CategoryEntity } from '../../category/entities/category.entity';
 @Entity('exercise')
 export class ExerciseEntity extends BaseModel {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  name: string;
+  name!: string;
 
   @Column('text')
-  description: string;
+  description!: string;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  createdAt: Date;
+  createdAt!: Date;
 
   @Column({ type: 'timestamp', nullable: true })
-  deletedAt: Date;
+  deletedAt!: Date;
 
   @Column('uuid')
-  partWorkoutId: string;
+  partWorkoutId!: string;
 
   @ManyToOne(() => PartWorkoutEntity, (partWorkout) => partWorkout.exercises)
-  partWorkout: PartWorkoutEntity;
+  partWorkout!: PartWorkoutEntity;
 
   @Column('uuid')
-  categoryId: string;
+  categoryId!: string;
 
   @ManyToOne(() => CategoryEntity, (category) => category.exercises)
-  category: CategoryEntity;
+  category!: CategoryEntity;
 }

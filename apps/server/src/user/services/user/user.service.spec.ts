@@ -94,11 +94,11 @@ describe('UserService', () => {
       .mockResolvedValue(true);
 
     expect(
-      await service.checkUserPassword(mockUserEntity, 'request-password'),
+      await service.checkUserPassword(mockUserEntity, 'request-password')
     ).toBe(true);
     expect(compareSpy).toHaveBeenCalledWith(
       'request-password',
-      mockUserEntity.passwordHash,
+      mockUserEntity.passwordHash
     );
   });
 

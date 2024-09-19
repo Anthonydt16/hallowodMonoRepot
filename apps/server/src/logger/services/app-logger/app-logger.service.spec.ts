@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppLoggerService } from './app-logger.service';
-import { ASYNC_STORAGE } from '@server/global/constants';
+import { ASYNC_STORAGE } from 'src/global/constants';
 import { ConfigService } from '@nestjs/config';
 import { pino } from 'pino';
 
@@ -67,7 +67,7 @@ describe('AppLoggerService', () => {
 
     expect(errorMock).toHaveBeenCalledWith(
       { traceId: 'uuid' },
-      '[context] message',
+      '[context] message'
     );
     expect(errorMock).toHaveBeenCalledWith('trace');
   });
@@ -86,7 +86,7 @@ describe('AppLoggerService', () => {
 
     expect(logMock).toHaveBeenCalledWith(
       { traceId: 'uuid' },
-      '[context] message',
+      '[context] message'
     );
   });
 
@@ -104,7 +104,7 @@ describe('AppLoggerService', () => {
 
     expect(logMock).toHaveBeenCalledWith(
       { traceId: 'uuid' },
-      '[context] message',
+      '[context] message'
     );
   });
 });

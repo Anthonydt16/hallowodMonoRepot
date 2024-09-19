@@ -36,7 +36,7 @@ describe('HealthController', () => {
     healthController = moduleRef.get<HealthController>(HealthController);
     healthCheckService = moduleRef.get<HealthCheckService>(HealthCheckService);
     typeOrmHealthIndicator = moduleRef.get<TypeOrmHealthIndicator>(
-      TypeOrmHealthIndicator,
+      TypeOrmHealthIndicator
     );
   });
 
@@ -63,7 +63,7 @@ describe('HealthController', () => {
         async (props: (() => void)[]) => {
           props.forEach((propFunction) => propFunction());
           return healthCheckResult;
-        },
+        }
       );
       (typeOrmHealthIndicator.pingCheck as Mock).mockReturnValue(true);
 

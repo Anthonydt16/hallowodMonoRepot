@@ -19,7 +19,7 @@ import { CacheInterceptor } from '@nestjs/cache-manager';
 export class UserController {
   constructor(
     private readonly authService: AuthService,
-    private readonly userService: UserService,
+    private readonly userService: UserService
   ) {}
 
   @Post('register')

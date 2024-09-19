@@ -35,7 +35,7 @@ describe('CacheHealthIndicator', () => {
       (cacheManagerMock.get as Mock).mockResolvedValueOnce('false');
 
       await expect(service.isHealthy()).rejects.toThrowError(
-        'CacheHealthIndicator failed',
+        'CacheHealthIndicator failed'
       );
     });
   });

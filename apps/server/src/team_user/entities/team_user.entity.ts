@@ -6,14 +6,14 @@ import { TeamEntity } from '../../team/entities/team.entity';
 @Entity('team_user')
 export class TeamUserEntity extends BaseModel {
   @Column('uuid')
-  userId: string;
+  userId!: string;
 
   @ManyToOne(() => UserEntity, (user) => user.teams)
-  user: UserEntity;
+  user!: UserEntity;
 
   @Column('uuid')
-  teamId: string;
+  teamId!: string;
 
   @ManyToOne(() => TeamEntity, (team) => team.users)
-  team: TeamEntity;
+  team!: TeamEntity;
 }

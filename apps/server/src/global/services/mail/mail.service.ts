@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { createTransport, Transporter } from 'nodemailer';
-import { MailConfig } from '@server/services/app-config/configuration';
-import SMTPTransport from 'nodemailer/lib/smtp-transport';
-import Mail from 'nodemailer/lib/mailer';
+import Mail = require('nodemailer/lib/mailer');
+import SMTPTransport = require('nodemailer/lib/smtp-transport');
+import { MailConfig } from 'src/services/app-config/configuration';
 
 type MailOptions = Mail.Options;
 

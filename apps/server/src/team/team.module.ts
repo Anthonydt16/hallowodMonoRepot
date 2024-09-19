@@ -3,10 +3,10 @@ import { TeamService } from './team.service';
 import { TeamController } from './team.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TeamEntity } from './entities/team.entity';
-import { CategoryEntity } from '@server/category/entities/category.entity';
-import { ContestEntity } from '@server/contest/entities/contest.entity';
-import { ContestModule } from '@server/contest/contest.module';
-import { CategoryModule } from '@server/category/category.module';
+import { CategoryEntity } from 'src/category/entities/category.entity';
+import { ContestEntity } from 'src/contest/entities/contest.entity';
+import { ContestModule } from 'src/contest/contest.module';
+import { CategoryModule } from 'src/category/category.module';
 
 @Module({
   imports: [

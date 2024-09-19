@@ -9,26 +9,26 @@ import { Column, Entity, OneToMany } from 'typeorm';
 })
 export class ContestEntity extends BaseModel {
   @Column()
-  name: string;
+  name!: string;
 
   @Column()
-  description: string;
+  description!: string;
 
   @Column()
-  city: string;
+  city!: string;
 
   @Column()
-  date: Date;
+  date!: Date;
 
   @Column()
-  gps_coordinates: string;
+  gps_coordinates!: string;
 
   @OneToMany(() => WorkoutEntity, (workout) => workout.contest)
-  workouts: WorkoutEntity[];
+  workouts!: WorkoutEntity[];
 
   @OneToMany(() => CategoryEntity, (category) => category.contest)
-  categorys: CategoryEntity[];
+  categorys!: CategoryEntity[];
 
   @OneToMany(() => TeamEntity, (team) => team.contest)
-  teams: TeamEntity[];
+  teams!: TeamEntity[];
 }

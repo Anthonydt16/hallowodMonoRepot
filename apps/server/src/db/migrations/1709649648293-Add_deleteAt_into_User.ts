@@ -8,7 +8,7 @@ export class AddDeleteAtIntoUser1709649648293 implements MigrationInterface {
         name: 'deleted_at',
         type: 'timestamp',
         isNullable: true,
-      }),
+      })
     );
   }
 

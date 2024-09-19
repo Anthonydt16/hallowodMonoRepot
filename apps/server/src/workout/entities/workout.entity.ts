@@ -6,17 +6,17 @@ import { Column, Entity, ManyToOne, OneToMany } from 'typeorm';
 @Entity('workout')
 export class WorkoutEntity extends BaseModel {
   @Column()
-  name: string;
+  name!: string;
 
   @Column()
-  description: string;
+  description!: string;
 
   @Column('uuid')
-  contest_id: string;
+  contest_id!: string;
 
   @ManyToOne(() => ContestEntity, (contest) => contest.workouts)
-  contest: ContestEntity;
+  contest!: ContestEntity;
 
   @OneToMany(() => PartWorkoutEntity, (partWorkout) => partWorkout.workout)
-  partWorkouts: PartWorkoutEntity[];
+  partWorkouts!: PartWorkoutEntity[];
 }

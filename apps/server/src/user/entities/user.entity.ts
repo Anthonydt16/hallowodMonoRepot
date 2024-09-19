@@ -15,29 +15,29 @@ export class UserEntity extends BaseModel {
   @Column({
     name: 'first_name',
   })
-  firstName: string;
+  firstName!: string;
 
   @Column({
     name: 'last_name',
   })
-  lastName: string;
+  lastName!: string;
 
   @Column()
-  email: string;
+  email!: string;
 
   @Column({
     name: 'password',
   })
-  passwordHash: string;
+  passwordHash!: string;
 
   @Column()
-  token: string;
+  token!: string;
 
   @Column({
     name: 'role',
   })
-  role: RoleEnum;
+  role!: RoleEnum;
 
   @ManyToMany(() => TeamUserEntity, (teamUser) => teamUser.user)
-  teams: TeamUserEntity[];
+  teams!: TeamUserEntity[];
 }

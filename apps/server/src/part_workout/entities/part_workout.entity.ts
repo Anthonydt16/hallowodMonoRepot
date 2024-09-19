@@ -13,16 +13,16 @@ export enum typePartWorkout {
 @Entity('part_workout')
 export class PartWorkoutEntity extends BaseModel {
   @Column()
-  name: string;
+  name!: string;
 
   @Column('text')
-  description: string;
+  description!: string;
 
   @Column('uuid')
-  workoutId: string;
+  workoutId!: string;
 
   @ManyToOne(() => WorkoutEntity, (workout) => workout.partWorkouts)
-  workout: WorkoutEntity;
+  workout!: WorkoutEntity;
 
   @Column({
     type: 'enum',
@@ -34,11 +34,11 @@ export class PartWorkoutEntity extends BaseModel {
       typePartWorkout.TABATA,
     ],
   })
-  type: string;
+  type!: string;
 
   @Column()
-  duration: string;
+  duration!: string;
 
   @OneToMany(() => ExerciseEntity, (exercise) => exercise.category)
-  exercises: ExerciseEntity[];
+  exercises!: ExerciseEntity[];
 }
